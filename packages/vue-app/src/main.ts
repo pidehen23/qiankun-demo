@@ -1,27 +1,46 @@
-import { createApp } from "vue";
+import { App as IApp, createApp } from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
-import router from "./router";
+import routes from "./router";
 import store from "./store";
 import "./public-path";
-
-const app = createApp(App);
+import { createRouter, createWebHistory, Router } from "vue-router";
 
 interface IProps {
   container?: HTMLElement;
 }
 
+let router: null | Router = null;
+let instance: null | IApp<Element> = null;
+
 function render(props: IProps) {
   const { container } = props;
 
-  app.use(store);
-  app.use(router);
+  instance = createApp(App);
 
-  app.mount(container ? (container.querySelector("#app") as Element) : "#app");
+  router = createRouter({
+    history: createWebHistory(
+      window.__POWERED_BY_QIANKUN__ ? "/vue/" : process.env.BASE_URL
+    ),
+    routes,
+  });
+
+  router.afterEach((to, from) => {
+    console.log("from ", from);
+    console.log("to ", to);
+  });
+
+  instance.use(store);
+  instance.use(router);
+
+  instance.mount(
+    container ? (container.querySelector("#app") as Element) : "#app"
+  );
 }
 
 // 独立运行时
 if (!window.__POWERED_BY_QIANKUN__) {
+  // debugger;
   render({});
 }
 
@@ -29,7 +48,7 @@ if (!window.__POWERED_BY_QIANKUN__) {
  * bootstrap： 在微应用初始化的时候调用一次，之后的生命周期里不再调用
  */
 export async function bootstrap() {
-  console.log("bootstrap");
+  console.log("vue3 app bootstrap");
 }
 
 /**
@@ -44,6 +63,13 @@ export async function mount(props: IProps) {
  * unmount ：应用每次 切出/卸载 均会调用
  */
 export async function unmount() {
-  console.log("unmount");
-  app.unmount();
+  console.log("vu3 app unmount");
+  if (instance) {
+    instance.unmount();
+    if (instance._container) {
+      instance._container.innerHTML = "";
+    }
+    instance = null;
+  }
+  router = null;
 }

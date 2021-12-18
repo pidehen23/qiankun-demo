@@ -13,6 +13,12 @@ const apps: RegistrableApp<ObjectType>[] = [
     activeRule: "/vue",
   },
   {
+    name: "vue2-app",
+    entry: "//localhost:3002",
+    container: "#vue2",
+    activeRule: "/vue2",
+  },
+  {
     name: "react-app",
     entry: "//localhost:3000",
     container: "#react",

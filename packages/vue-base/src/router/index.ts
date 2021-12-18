@@ -8,7 +8,8 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: "/about",
+    strict: true,
+    path: "/base/about",
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

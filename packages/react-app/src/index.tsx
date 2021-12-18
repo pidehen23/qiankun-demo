@@ -22,7 +22,7 @@ function render(props: IProps) {
 
   ReactDOM.render(
     <React.StrictMode>
-      <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? "/react" : "/"}>
+      <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? "/react/" : "/"}>
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
