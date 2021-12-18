@@ -1,10 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
-import router from "./router";
+import routes from "./router";
 import store from "./store";
 import "./public-path";
 import { CombinedVueInstance } from "vue/types/vue";
+import VueRouter from "vue-router";
 
 Vue.config.productionTip = false;
 
@@ -19,9 +20,21 @@ let instance: null | CombinedVueInstance<
   object,
   Record<never, unknown>
 > = null;
+let router: null | VueRouter = null;
 
 function render(props: IProps = {}) {
   const { container } = props;
+
+  router = new VueRouter({
+    mode: "history",
+    base: window.__POWERED_BY_QIANKUN__ ? "/vue2/" : process.env.BASE_URL,
+    routes,
+  });
+
+  router.afterEach((to, from) => {
+    console.log("from ", from);
+    console.log("to ", to);
+  });
 
   instance = new Vue({
     router,
@@ -36,7 +49,7 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log("[vue] vue app bootstraped");
+  console.log("[vue] vue2 app bootstrap");
 }
 export async function mount(props: IProps) {
   console.log("[vue] props from main framework", props);
@@ -47,5 +60,6 @@ export async function unmount() {
     instance.$destroy();
     instance.$el.innerHTML = "";
     instance = null;
+    router = null;
   }
 }

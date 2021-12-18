@@ -10,7 +10,14 @@ import start from "./modules";
 const app = createApp(App);
 
 // qiankun
-start();
+start({
+  prefetch: false,
+  sandbox: {
+    // strictStyleIsolation: true // shadowDom样式隔离
+    experimentalStyleIsolation: true,
+  },
+  singular: true,
+});
 
 app.use(store);
 app.use(router);

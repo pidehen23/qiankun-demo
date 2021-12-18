@@ -1,8 +1,9 @@
 const { defineConfig } = require("@vue/cli-service");
 const { name } = require("./package.json");
+const path = require("path");
 
 module.exports = defineConfig({
-  transpileDependencies: true,
+  // transpileDependencies: true,
   devServer: {
     port: 3002,
     proxy: {},
@@ -11,6 +12,11 @@ module.exports = defineConfig({
     },
   },
   configureWebpack: {
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
     output: {
       library: `${name}`,
       libraryTarget: "umd", // 把微应用打包成 umd 库格式
