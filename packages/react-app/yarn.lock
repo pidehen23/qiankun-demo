@@ -1014,7 +1014,7 @@
     "core-js-pure" "^3.19.0"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   "integrity" "sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA=="
   "resolved" "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.16.5.tgz"
   "version" "7.16.5"
@@ -4643,6 +4643,13 @@
   dependencies:
     "resolve-from" "^5.0.0"
 
+"import-html-entry@^1.9.0":
+  "integrity" "sha1-PYxZd5Jr3RIquOZYllwQIGi0r40="
+  "resolved" "https://registry.npm.taobao.org/import-html-entry/download/import-html-entry-1.11.1.tgz"
+  "version" "1.11.1"
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+
 "import-local@^3.0.2":
   "integrity" "sha512-bE9iaUY3CXH8Cwfan/abDKAxe1KGT9kyGsBPqf6DMK/z0a2OzAsrukeYNgIH6cH5Xr452jb1TUL8rSfCLjZ9uA== sha1-TVHCxJXKk5PaJZ7Ga2LgIpICEeA="
   "resolved" "https://registry.npmmirror.com/import-local/download/import-local-3.0.3.tgz"
@@ -5677,7 +5684,7 @@
   "resolved" "https://registry.nlark.com/lodash.uniq/download/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.7.0":
+"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.7.0":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg== sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw="
   "resolved" "https://registry.nlark.com/lodash/download/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -6935,6 +6942,17 @@
   "resolved" "https://registry.nlark.com/q/download/q-1.5.1.tgz"
   "version" "1.5.1"
 
+"qiankun@^2.6.3":
+  "integrity" "sha512-h1NIokwjdt508HNPcWBdzoYFDJvhbpUUlFSa5dDkpJYVCl55iqqHgdyi1YayinmLmr/9s/zD+WQv+A2mbzkMQw=="
+  "resolved" "https://registry.npmmirror.com/qiankun/download/qiankun-2.6.3.tgz"
+  "version" "2.6.3"
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "import-html-entry" "^1.9.0"
+    "lodash" "^4.17.11"
+    "single-spa" "^5.9.2"
+    "tslib" "^1.10.0"
+
 "qs@6.9.6":
   "integrity" "sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ== sha1-Ju08gkOkMbKSSsqEzJBHHzXVoO4="
   "resolved" "https://registry.npmmirror.com/qs/download/qs-6.9.6.tgz"
@@ -7580,6 +7598,11 @@
   "resolved" "https://registry.npmmirror.com/signal-exit/download/signal-exit-3.0.6.tgz?cache=0&sync_timestamp=1637255763586&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsignal-exit%2Fdownload%2Fsignal-exit-3.0.6.tgz"
   "version" "3.0.6"
 
+"single-spa@^5.9.2":
+  "integrity" "sha1-LRUcuzsnNimlsnswo7jKhH3LpMU="
+  "resolved" "https://registry.npmmirror.com/single-spa/download/single-spa-5.9.3.tgz"
+  "version" "5.9.3"
+
 "sisteransi@^1.0.5":
   "integrity" "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg== sha1-E01oEpd1ZDfMBcoBNw06elcQde0="
   "resolved" "https://registry.nlark.com/sisteransi/download/sisteransi-1.0.5.tgz"
@@ -8126,6 +8149,11 @@
     "json5" "^1.0.1"
     "minimist" "^1.2.0"
     "strip-bom" "^3.0.0"
+
+"tslib@^1.10.0":
+  "integrity" "sha1-zy04vcNKE0vK8QkcQfZhni9nLQA="
+  "resolved" "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1628722556410&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz"
+  "version" "1.14.1"
 
 "tslib@^1.8.1":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg== sha1-zy04vcNKE0vK8QkcQfZhni9nLQA="
