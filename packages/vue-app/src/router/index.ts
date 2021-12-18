@@ -19,7 +19,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(
+    window.__POWERED_BY_QIANKUN__ ? "/vue" : process.env.BASE_URL
+  ),
   routes,
 });
 
