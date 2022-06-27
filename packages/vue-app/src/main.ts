@@ -4,7 +4,12 @@ import "./registerServiceWorker";
 import routes from "./router";
 import store from "./store";
 import "./public-path";
-import { createRouter, createWebHistory, Router } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  Router,
+  RouterHistory,
+} from "vue-router";
 
 interface IProps {
   container?: HTMLElement;
@@ -12,16 +17,18 @@ interface IProps {
 
 let router: null | Router = null;
 let instance: null | IApp<Element> = null;
+let history: null | RouterHistory = null;
 
 function render(props: IProps) {
   const { container } = props;
 
   instance = createApp(App);
+  history = createWebHistory(
+    window.__POWERED_BY_QIANKUN__ ? "/vue/" : process.env.BASE_URL
+  );
 
   router = createRouter({
-    history: createWebHistory(
-      window.__POWERED_BY_QIANKUN__ ? "/vue/" : process.env.BASE_URL
-    ),
+    history,
     routes,
   });
 
@@ -71,5 +78,6 @@ export async function unmount() {
     }
     instance = null;
   }
+  history?.destroy();
   router = null;
 }

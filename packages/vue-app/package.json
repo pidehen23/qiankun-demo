@@ -5,10 +5,11 @@
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serve": "serve -s dist -p 3001"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
+    "core-js": "^3.20.0",
     "qiankun": "^2.6.3",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",

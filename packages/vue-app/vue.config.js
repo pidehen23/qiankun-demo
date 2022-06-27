@@ -8,6 +8,7 @@ function resolve(dir) {
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  // publicPath: `/vue/`,
   devServer: {
     proxy: {},
     // 监听端口

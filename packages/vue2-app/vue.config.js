@@ -3,7 +3,8 @@ const { name } = require("./package.json");
 const path = require("path");
 
 module.exports = defineConfig({
-  // transpileDependencies: true,
+  transpileDependencies: true,
+  // publicPath: `/vue2/`,
   devServer: {
     port: 3002,
     proxy: {},

@@ -6670,7 +6670,7 @@
   "resolved" "https://registry.npmmirror.com/vary/download/vary-1.1.2.tgz"
   "version" "1.1.2"
 
-"vue-class-component@*", "vue-class-component@^7.2.3":
+"vue-class-component@*", "vue-class-component@^7.2.6":
   "integrity" "sha1-hHHgN7jkdi9aRkaG4Z5a/HCFAuQ= sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w=="
   "resolved" "https://registry.npmmirror.com/vue-class-component/download/vue-class-component-7.2.6.tgz"
   "version" "7.2.6"
@@ -6707,7 +6707,7 @@
   "resolved" "https://registry.npmmirror.com/vue-property-decorator/download/vue-property-decorator-9.1.2.tgz"
   "version" "9.1.2"
 
-"vue-router@^3.5.1":
+"vue-router@^3.5.3":
   "integrity" "sha1-BBBIBT4zaCnQXa+s9qj7ZpoueZk= sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg=="
   "resolved" "https://registry.npmmirror.com/vue-router/download/vue-router-3.5.3.tgz"
   "version" "3.5.3"
